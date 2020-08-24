@@ -121,7 +121,7 @@ class Encode_educ(BaseEstimator, TransformerMixin):
         return data
 
 class Encode_area(BaseEstimator, TransformerMixin):
-    def __init__(self, le)::
+    def __init__(self, le):
         self.le = le
         self.le.fit(['Ciências das natureza','Medicina','Outros','Marketing','Faculdade Técnica','Ciências humanas'])
     
@@ -134,7 +134,7 @@ class Encode_area(BaseEstimator, TransformerMixin):
         return data
 
 class Encode_genero(BaseEstimator, TransformerMixin):
-    def __init__(self, le)::
+    def __init__(self, le):
         self.le = le
         self.le.fit(['M','F'])
     
@@ -147,7 +147,7 @@ class Encode_genero(BaseEstimator, TransformerMixin):
         return data
 
 class Encode_contrat(BaseEstimator, TransformerMixin):
-    def __init__(self, le)::
+    def __init__(self, le):
         self.le = le
         self.le.fit(['Sim','Não'])
     
@@ -160,7 +160,7 @@ class Encode_contrat(BaseEstimator, TransformerMixin):
         return data
 
 class Encode_cargo(BaseEstimator, TransformerMixin):
-    def __init__(self, le)::
+    def __init__(self, le):
         self.le = le
         self.le.fit(['Engenheiro','Tecnico','Supervisor','Analista','Gerente','Diretor','Vendedo senior','Vendedor junior','Assistente'])
     
@@ -173,7 +173,7 @@ class Encode_cargo(BaseEstimator, TransformerMixin):
         return data
 
 class Encode_estcivil(BaseEstimator, TransformerMixin):
-    def __init__(self, le)::
+    def __init__(self, le):
         self.le = le
         self.le.fit(['Casado','Solteiro','Divorciado'])
     
@@ -186,7 +186,7 @@ class Encode_estcivil(BaseEstimator, TransformerMixin):
         return data
 
 class Encode_he(BaseEstimator, TransformerMixin):
-    def __init__(self, le)::
+    def __init__(self, le):
         self.le = le
         self.le.fit(['Sim','Não'])
     
