@@ -127,7 +127,7 @@ class Encode_educ(BaseEstimator, TransformerMixin):
         data.loc[data['Educacao'] == 'Superior incompleto - cursando', 'Educacao'] = 1
         data.loc[data['Educacao'] == 'Superior incompleto'           , 'Educacao'] = 2
         data.loc[data['Educacao'] == 'Superior completo'             , 'Educacao'] = 3
-        data.loc[data['Educacao'] == 'Pós-graduação'                 , 'Educacao'] = 4
+        data.loc[data['Educacao'] == 'Pós-gradução'                  , 'Educacao'] = 4
         data['Educacao'] = pd.to_numeric(data['Educacao'])
         return data
 
