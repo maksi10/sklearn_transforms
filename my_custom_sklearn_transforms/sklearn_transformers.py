@@ -110,7 +110,7 @@ class Encode_depart(BaseEstimator, TransformerMixin):
 class Encode_educ(BaseEstimator, TransformerMixin):
     def __init__(self, le):
         self.le = le
-        self.le.fit(['Médio completo','Superior incompleto - cursando','Superior incompleto','Superior completo','PÃ³s-graduÃ§Ã£o'])
+        self.le.fit(['Médio completo','Superior incompleto - cursando','Superior incompleto','Superior completo','Pós-graduação'])
     
     def fit(self, X, y=None):
         return self
@@ -123,7 +123,7 @@ class Encode_educ(BaseEstimator, TransformerMixin):
 class Encode_area(BaseEstimator, TransformerMixin):
     def __init__(self, le)::
         self.le = le
-        self.le.fit(['CiÃªncias das natureza','Medicina','Outros','Marketing','Faculdade TÃ©cnica','CiÃªncias humanas'])
+        self.le.fit(['Ciências das natureza','Medicina','Outros','Marketing','Faculdade Técnica','Ciências humanas'])
     
     def fit(self, X, y=None):
         return self
