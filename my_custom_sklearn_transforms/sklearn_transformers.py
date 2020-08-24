@@ -148,7 +148,6 @@ class Encode_area(BaseEstimator, TransformerMixin):
 class Encode_genero(BaseEstimator, TransformerMixin):
     def __init__(self):
         pass
-        self.le = le
     
     def fit(self, X, y=None):
         return self
@@ -197,8 +196,7 @@ class Encode_cargo(BaseEstimator, TransformerMixin):
 
 class Encode_estcivil(BaseEstimator, TransformerMixin):
     def __init__(self):
-        self.le = le
-        self.le.fit(['Casado','Solteiro','Divorciado'])
+       pass
     
     def fit(self, X, y=None):
         return self
