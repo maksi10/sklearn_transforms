@@ -81,8 +81,8 @@ class InglesDT(BaseEstimator, TransformerMixin):
         return X
 
 class Encode_localtrab(BaseEstimator, TransformerMixin):
-    def __init__(self):
-        pass
+    def __init__(self, le):
+        self.le = LabelEncoder().fit(['Cliente','Misto','Escritório'])
     
     def fit(self, X, y=None):
         return self
@@ -90,8 +90,6 @@ class Encode_localtrab(BaseEstimator, TransformerMixin):
     def transform(self, X):
         data = X.copy()
         print('1')
-        self.le = LabelEncoder().fit(['Cliente','Misto','Escritório'])
-        print('2')
         data["code_Local_de_trabalho"] = self.le.transform(data["Local de trabalho"])
         print('3')
         return data
