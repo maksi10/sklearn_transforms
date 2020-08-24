@@ -82,7 +82,7 @@ class InglesDT(BaseEstimator, TransformerMixin):
 
 class Encode_localtrab(BaseEstimator, TransformerMixin):
     def __init__(self,le):
-        self.le = LabelEncoder()
+        self.le = le
         self.le.fit(['Cliente','Misto','Escritório'])
 
     def fit(self, X, y=None):
@@ -97,7 +97,7 @@ class Encode_localtrab(BaseEstimator, TransformerMixin):
 
 class Encode_depart(BaseEstimator, TransformerMixin):
     def __init__(self,le):
-        self.le = LabelEncoder()
+        self.le = le
         self.le.fit(['Engenharia','Vendas','RH'])
     
     def fit(self, X, y=None):
@@ -111,7 +111,7 @@ class Encode_depart(BaseEstimator, TransformerMixin):
 
 class Encode_educ(BaseEstimator, TransformerMixin):
     def __init__(self,le):
-        self.le = LabelEncoder()
+        self.le = le
         self.le.fit(['Médio completo','Superior incompleto - cursando','Superior incompleto','Superior completo','Pós-graduação'])
     
     def fit(self, X, y=None):
@@ -125,7 +125,7 @@ class Encode_educ(BaseEstimator, TransformerMixin):
 
 class Encode_area(BaseEstimator, TransformerMixin):
     def __init__(self,le):
-        self.le = LabelEncoder()
+        self.le = le
         self.le.fit(['Ciências das natureza','Medicina','Outros','Marketing','Faculdade Técnica','Ciências humanas'])
     
     def fit(self, X, y=None):
@@ -139,7 +139,7 @@ class Encode_area(BaseEstimator, TransformerMixin):
 
 class Encode_genero(BaseEstimator, TransformerMixin):
     def __init__(self,le):
-        self.le = LabelEncoder()
+        self.le = le
         self.le.fit(['M','F'])
     
     def fit(self, X, y=None):
@@ -153,7 +153,7 @@ class Encode_genero(BaseEstimator, TransformerMixin):
 
 class Encode_contrat(BaseEstimator, TransformerMixin):
     def __init__(self,le):
-        self.le = LabelEncoder()
+        self.le = le
         self.le.fit(['Sim','Não'])
     
     def fit(self, X, y=None):
@@ -167,7 +167,7 @@ class Encode_contrat(BaseEstimator, TransformerMixin):
 
 class Encode_cargo(BaseEstimator, TransformerMixin):
     def __init__(self,le):
-        self.le = LabelEncoder()
+        self.le = le
         self.le.fit(['Engenheiro','Tecnico','Supervisor','Analista','Gerente','Diretor','Vendedo senior','Vendedor junior','Assistente'])
     
     def fit(self, X, y=None):
@@ -181,7 +181,7 @@ class Encode_cargo(BaseEstimator, TransformerMixin):
 
 class Encode_estcivil(BaseEstimator, TransformerMixin):
     def __init__(self,le):
-        self.le = LabelEncoder()
+        self.le = le
         self.le.fit(['Casado','Solteiro','Divorciado'])
     
     def fit(self, X, y=None):
@@ -195,7 +195,7 @@ class Encode_estcivil(BaseEstimator, TransformerMixin):
 
 class Encode_he(BaseEstimator, TransformerMixin):
     def __init__(self,le):
-        self.le = LabelEncoder()
+        self.le = le
         self.le.fit(['Sim','Não'])
     
     def fit(self, X, y=None):
