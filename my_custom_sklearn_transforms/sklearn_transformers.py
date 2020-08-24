@@ -90,7 +90,7 @@ class Encode_localtrab(BaseEstimator, TransformerMixin):
     
     def transform(self, X):
         data = X.copy()
-        data["code_Local_de_trabalho"] = le.transform(X["Local de trabalho"])
+        data["code_Local_de_trabalho"] = self.le.transform(X["Local de trabalho"])
         return data
 
 
