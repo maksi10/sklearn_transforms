@@ -1,6 +1,7 @@
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.tree import DecisionTreeClassifier
 import numpy as np
+import pandas as pd 
 
 
 # All sklearn Transforms must have the `transform` and `fit` methods
@@ -92,6 +93,7 @@ class Encode_localtrab(BaseEstimator, TransformerMixin):
         data.loc[data['Local de trabalho'] == 'Cliente'   , 'Local de trabalho'] = 0
         data.loc[data['Local de trabalho'] == 'Misto'     , 'Local de trabalho'] = 1
         data.loc[data['Local de trabalho'] == 'Escritório', 'Local de trabalho'] = 2
+        data['Local de trabalho'] = pd.to_numeric(data['Local de trabalho'])
         return data
 
 
@@ -108,6 +110,7 @@ class Encode_depart(BaseEstimator, TransformerMixin):
         data.loc[data['Departmento'] == 'Engenharia', 'Departmento'] = 0
         data.loc[data['Departmento'] == 'Vendas'    , 'Departmento'] = 1
         data.loc[data['Departmento'] == 'RH'        , 'Departmento'] = 2
+        data['Departmento'] = pd.to_numeric(data['Departmento'])
         return data
 
 class Encode_educ(BaseEstimator, TransformerMixin):
@@ -125,6 +128,7 @@ class Encode_educ(BaseEstimator, TransformerMixin):
         data.loc[data['Educacao'] == 'Superior incompleto'           , 'Educacao'] = 2
         data.loc[data['Educacao'] == 'Superior completo'             , 'Educacao'] = 3
         data.loc[data['Educacao'] == 'Pós-graduação'                 , 'Educacao'] = 4
+        data['Educacao'] = pd.to_numeric(data['Educacao'])
         return data
 
 class Encode_area(BaseEstimator, TransformerMixin):
@@ -143,6 +147,7 @@ class Encode_area(BaseEstimator, TransformerMixin):
         data.loc[data['Area'] == 'Marketing'               , 'Area'] = 3
         data.loc[data['Area'] == 'Faculdade Técnica'       , 'Area'] = 4
         data.loc[data['Area'] == 'Ciências humanas'        , 'Area'] = 5
+        data['Area'] = pd.to_numeric(data['Area'])
         return data
 
 class Encode_genero(BaseEstimator, TransformerMixin):
@@ -157,6 +162,7 @@ class Encode_genero(BaseEstimator, TransformerMixin):
         data = X.copy()
         data.loc[data['Genero'] == 'M'  , 'Genero'] = 0
         data.loc[data['Genero'] == 'F'  , 'Genero'] = 1
+        data['Genero'] = pd.to_numeric(data['Genero'])
         return data
 
 class Encode_contrat(BaseEstimator, TransformerMixin):
@@ -171,6 +177,7 @@ class Encode_contrat(BaseEstimator, TransformerMixin):
         data = X.copy()
         data.loc[data['Contratar'] == 'Não'  , 'Contratar'] = 0
         data.loc[data['Contratar'] == 'Sim'  , 'Contratar'] = 1
+        data['Contratar'] = pd.to_numeric(data['Contratar'])
         return data
 
 class Encode_cargo(BaseEstimator, TransformerMixin):
@@ -192,6 +199,7 @@ class Encode_cargo(BaseEstimator, TransformerMixin):
         data.loc[data['Cargo'] == 'Vendedo senior'  , 'Cargo'] = 6
         data.loc[data['Cargo'] == 'Vendedor junior' , 'Cargo'] = 7
         data.loc[data['Cargo'] == 'Assistente'      , 'Cargo'] = 8
+        data['Cargo'] = pd.to_numeric(data['Cargo'])
         return data
 
 class Encode_estcivil(BaseEstimator, TransformerMixin):
@@ -207,6 +215,7 @@ class Encode_estcivil(BaseEstimator, TransformerMixin):
         data.loc[data['Estado civil'] == 'Casado'      , 'Estado civil'] = 0
         data.loc[data['Estado civil'] == 'Solteiro'    , 'Estado civil'] = 1
         data.loc[data['Estado civil'] == 'Divorciado'  , 'Estado civil'] = 2
+        data['Estado civil'] = pd.to_numeric(data['Estado civil'])
         return data
 
 class Encode_he(BaseEstimator, TransformerMixin):
@@ -221,4 +230,5 @@ class Encode_he(BaseEstimator, TransformerMixin):
         data = X.copy()
         data.loc[data['Necessita de hora extra'] == 'Não'  , 'Necessita de hora extra'] = 0
         data.loc[data['Necessita de hora extra'] == 'Sim'  , 'Necessita de hora extra'] = 1
+        data['Necessita de hora extra'] = pd.to_numeric(data['Necessita de hora extra'])
         return data
