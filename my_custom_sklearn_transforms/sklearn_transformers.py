@@ -156,8 +156,8 @@ class Encode_genero(BaseEstimator, TransformerMixin):
     def transform(self, X):
         print('Encoding genero')
         data = X.copy()
-         data.loc[data['Genero'] == 'M'  , 'Genero'] = 0
-         data.loc[data['Genero'] == 'F'  , 'Genero'] = 1
+        data.loc[data['Genero'] == 'M'  , 'Genero'] = 0
+        data.loc[data['Genero'] == 'F'  , 'Genero'] = 1
         return data
 
 class Encode_contrat(BaseEstimator, TransformerMixin):
