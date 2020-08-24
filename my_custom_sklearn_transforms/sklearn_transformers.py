@@ -82,15 +82,16 @@ class InglesDT(BaseEstimator, TransformerMixin):
 
 class Encode_localtrab(BaseEstimator, TransformerMixin):
     def __init__(self):
-        le = LabelEncoder()
-        le.fit(['Cliente','Misto','Escritório'])
+        pass
     
     def fit(self, X, y=None):
         return self
     
     def transform(self, X):
         data = X.copy()
-        data["code_Local_de_trabalho"] = self.le.transform(X["Local de trabalho"])
+        le = LabelEncoder()
+        le.fit(['Cliente','Misto','Escritório'])
+        data["code_Local_de_trabalho"] = le.transform(data["Local de trabalho"])
         return data
 
 
@@ -99,13 +100,13 @@ class Encode_depart(BaseEstimator, TransformerMixin):
         pass
     
     def fit(self, X, y=None):
-        le = LabelEncoder()
-        le.fit(['Engenharia','Vendas','RH'])
         return self
     
     def transform(self, X):
         data = X.copy()
-        data["code_Departmento"] = le.transform(X["Departmento"])
+        le = LabelEncoder()
+        le.fit(['Engenharia','Vendas','RH'])
+        data["code_Departmento"] = le.transform(data["Departmento"])
         return data
 
 class Encode_educ(BaseEstimator, TransformerMixin):
@@ -113,12 +114,12 @@ class Encode_educ(BaseEstimator, TransformerMixin):
         pass
     
     def fit(self, X, y=None):
-        le = LabelEncoder()
-        le.fit(['MÃ©dio completo','Superior incompleto - cursando','Superior incompleto','Superior completo','PÃ³s-graduÃ§Ã£o'])
         return self
     
     def transform(self, X):
         data = X.copy()
+        le = LabelEncoder()
+        le.fit(['MÃ©dio completo','Superior incompleto - cursando','Superior incompleto','Superior completo','PÃ³s-graduÃ§Ã£o'])
         data["code_Educacao"] = le.transform(X["Educacao"])
         return data
 
@@ -127,12 +128,12 @@ class Encode_area(BaseEstimator, TransformerMixin):
         pass
     
     def fit(self, X, y=None):
-        le = LabelEncoder()
-        le.fit(['CiÃªncias das natureza','Medicina','Outros','Marketing','Faculdade TÃ©cnica','CiÃªncias humanas'])
         return self
     
     def transform(self, X):
         data = X.copy()
+        le = LabelEncoder()
+        le.fit(['CiÃªncias das natureza','Medicina','Outros','Marketing','Faculdade TÃ©cnica','CiÃªncias humanas'])
         data["code_Area"] = le.transform(X["Area"])
         return data
 
@@ -141,12 +142,12 @@ class Encode_genero(BaseEstimator, TransformerMixin):
         pass
     
     def fit(self, X, y=None):
-        le = LabelEncoder()
-        le.fit(['M','F'])
         return self
     
     def transform(self, X):
         data = X.copy()
+        le = LabelEncoder()
+        le.fit(['M','F'])
         data["code_Genero"] = le.transform(X["Genero"])
         return data
 
@@ -155,12 +156,12 @@ class Encode_contrat(BaseEstimator, TransformerMixin):
         pass
     
     def fit(self, X, y=None):
-        le = LabelEncoder()
-        le.fit(['Sim','Não'])
         return self
     
     def transform(self, X):
         data = X.copy()
+        le = LabelEncoder()
+        le.fit(['Sim','Não'])
         data["code_Contratar"] = le.transform(X["Contratar"])
         return data
 
@@ -169,12 +170,12 @@ class Encode_cargo(BaseEstimator, TransformerMixin):
         pass
     
     def fit(self, X, y=None):
-        le = LabelEncoder()
-        le.fit(['Engenheiro','Tecnico','Supervisor','Analista','Gerente','Diretor','Vendedo senior','Vendedor junior','Assistente'])
         return self
     
     def transform(self, X):
         data = X.copy()
+        le = LabelEncoder()
+        le.fit(['Engenheiro','Tecnico','Supervisor','Analista','Gerente','Diretor','Vendedo senior','Vendedor junior','Assistente'])
         data["code_Cargo"] = le.transform(X["Cargo"])
         return data
 
@@ -183,12 +184,12 @@ class Encode_estcivil(BaseEstimator, TransformerMixin):
         pass
     
     def fit(self, X, y=None):
-        le = LabelEncoder()
-        le.fit(['Casado','Solteiro','Divorciado'])
         return self
     
     def transform(self, X):
         data = X.copy()
+        le = LabelEncoder()
+        le.fit(['Casado','Solteiro','Divorciado'])
         data["code_Estado_civil"] = le.transform(X["Estado civil"])
         return data
 
@@ -197,12 +198,12 @@ class Encode_he(BaseEstimator, TransformerMixin):
         pass
     
     def fit(self, X, y=None):
-        le = LabelEncoder()
-        le.fit(['Sim','Não'])
         return self
     
     def transform(self, X):
         data = X.copy()
+        le = LabelEncoder()
+        le.fit(['Sim','Não'])
         data["code_Necessita_de_hora_extra"] = le.transform(X["Necessita de hora extra"])
         return data
 
