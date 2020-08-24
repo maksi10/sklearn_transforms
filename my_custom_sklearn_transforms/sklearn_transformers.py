@@ -1,6 +1,7 @@
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import LabelEncoder
+import pickle 
 import numpy as np
 
 
@@ -83,15 +84,22 @@ class InglesDT(BaseEstimator, TransformerMixin):
 class Encode_localtrab(BaseEstimator, TransformerMixin):
     def __init__(self,le):
         self.le = le
-        #self.le.fit(['Cliente','Misto','Escritório'])
 
     def fit(self, X, y=None):
+        self.le.fit(['Cliente','Misto','Escritório'])
+        output = open('localtrab.pkl', 'wb')
+        pickle.dump(self.le, output)
+        output.close()
+        print('[OK] - Saved pickle for Encode_localtrab.')
         return self
     
     def transform(self, X):
         print('Encoding localtrab')
         data = X.copy()
-        data["code_Local_de_trabalho"] = self.le.fit(['Cliente','Misto','Escritório']).transform(data["Local de trabalho"])
+        pkl_file = open('localtrab.pkl', 'rb')
+        le_localtrab = pickle.load(pkl_file) 
+        data["code_Local_de_trabalho"] = le_localtrab.transform(data["Local de trabalho"])
+        pkl_file.close()
         return data
 
 
